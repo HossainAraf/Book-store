@@ -1,32 +1,42 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import AddBook from './AddBook';
+import Book from './Book';
 
-const List = ({ books, onDelete }) => (
-  <div>
-    {books && books.length > 0 ? (
-      books.map((book) => (
-        <AddBook
-          key={book.id}
-          title={book.title}
-          author={book.author}
-          onDelete={() => onDelete(book.id)}
-        />
-      ))
-    ) : (
-      <p>No books to display.</p>
-    )}
-  </div>
-);
+const BooksList = () => {
+  const books = [
+    {
+      id: 1,
+      title: 'The Hunger Games',
+      author: 'Suzanne Collins',
+      category: 'Action',
+    },
+    {
+      id: 2,
+      title: 'Dune',
+      author: 'Frank Herbert',
+      category: 'Science Fiction',
+    },
+    {
+      id: 3,
+      title: 'Capital in the Twenty-First Century',
+      author: 'Suzanne Collins',
+      category: 'Economy',
+    },
+  ];
 
-List.propTypes = {
-  books: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      author: PropTypes.string.isRequired,
-    }),
-  ).isRequired,
-  onDelete: PropTypes.func.isRequired,
+  return (
+    <div>
+      <ul className="books">
+        {books.map((book) => (
+          <Book
+            key={book.id}
+            title={book.title}
+            author={book.author}
+            category={book.category}
+          />
+        ))}
+      </ul>
+    </div>
+  );
 };
 
-export default List;
+export default BooksList;

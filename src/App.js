@@ -1,13 +1,16 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './components/Home';
+import Nav from './components/Nav';
+import Books from './components/Books';
 import Categories from './components/Categories';
+// import BookList from './components/BookList';
 
 function App() {
   return (
     <Router>
+      <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Books />} />
         <Route path="/categories" element={<Categories />} />
       </Routes>
     </Router>

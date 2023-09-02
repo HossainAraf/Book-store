@@ -1,17 +1,16 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import userIcon from '../Assets/user-regular.svg';
 
-const Navigation = () => (
+const Nav = () => (
   <nav>
-    <ul>
-      <li>
-        <Link to="/">Home</Link>
-      </li>
-      <li>
-        <Link to="/categories">Categories</Link>
-      </li>
+    <h1>Bookstore CMS</h1>
+    <ul className={Nav.ul}>
+      <li><Link to="/">BOOKS</Link></li>
+      <li><Link to="/categories">CATEGORIES</Link></li>
     </ul>
+    {/* <a to="/"><userIcon /></a> */}
   </nav>
 );
 
-export default Navigation;
+export default Nav;
