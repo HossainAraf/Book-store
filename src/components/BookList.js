@@ -1,28 +1,42 @@
 import React from 'react';
+import Book from './Book';
 
-const BookList = () => (
-  <div id="books-container">
-    <ul id="book-list">
-      <li>
-        <div className="book-intro">
-          <h4>Action</h4>
-          <h3>The Hunger Games</h3>
-          <h6>Suzanne Collins</h6>
-          <ul className="actions">
-            <li>Comments</li>
-            <li>Remove</li>
-            <li>Edit</li>
-          </ul>
-        </div>
-        <div className="completed-percent">64%</div>
-        <div className="progress">
-          <h4>CURRENT CHAPTER</h4>
-          <h3>Chapter 17</h3>
-          <button className="btn-progress" type="button">Progress</button>
-        </div>
-      </li>
-    </ul>
-  </div>
-);
+const BooksList = () => {
+  const books = [
+    {
+      id: 1,
+      title: 'The Hunger Games',
+      author: 'Suzanne Collins',
+      category: 'Action',
+    },
+    {
+      id: 2,
+      title: 'Dune',
+      author: 'Frank Herbert',
+      category: 'Science Fiction',
+    },
+    {
+      id: 3,
+      title: 'Capital in the Twenty-First Century',
+      author: 'Suzanne Collins',
+      category: 'Economy',
+    },
+  ];
 
-export default BookList;
+  return (
+    <div>
+      <ul className="books">
+        {books.map((book) => (
+          <Book
+            key={book.id}
+            title={book.title}
+            author={book.author}
+            category={book.category}
+          />
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default BooksList;
