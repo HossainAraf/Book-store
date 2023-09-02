@@ -7,15 +7,15 @@ const AddBook = () => (
       type="text"
       placeholder="Add Title ..."
       name="title"
-      className="addtitle"
+      className="add-title"
     />
     <input
       type="text"
       placeholder="Add Author"
       name="author"
-      className="addauthor"
+      className="add-author"
     />
-    <button type="submit" className="addsubmit">
+    <button type="submit" className="add-submit">
       ADD BOOK
     </button>
   </form>
