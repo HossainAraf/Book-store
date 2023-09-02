@@ -24,7 +24,6 @@
 ## 📖 BookstoreCMS
 **BookstoreCMS** is a front-end application which can be used as a  hbook library.
 
- 📗 [Live Demo]()
 
 ## 🛠 Built With <a name="built-with">React</a>
 
