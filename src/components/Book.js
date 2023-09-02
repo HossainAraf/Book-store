@@ -16,6 +16,7 @@ const Book = ({ title, author, category }) => (
       Category:
       {category}
     </p>
+    <button type="button">Delete</button>
   </div>
 );
 
