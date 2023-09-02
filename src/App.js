@@ -9,12 +9,10 @@ function App() {
   return (
     <Router>
       <Nav />
-      <Books />
       <Routes>
         <Route path="/" element={<Books />} />
         <Route path="/categories" element={<Categories />} />
       </Routes>
-
     </Router>
   );
 }
