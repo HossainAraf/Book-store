@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+import { nanoid } from '@reduxjs/toolkit';
 // DEFINING CONSTANTS
 const AddBook = 'AddBook';
 const RemoveBook = 'RemoveBook';
@@ -11,17 +11,22 @@ const initialBooksState = {
 
 //CREATE A SLICE USING createSlice
 const bookSlice = createSlice({
-  name: 'books',
+  name: 'book',
   initialState: initialBooksState,
   reducers: {
-  addBook:(state, action) => {
-    state.books.push(action.payload.title);
-  },
-  removeBook: (state, action) => {
-    state.books = state.books.filer((book) => book !== action.payload
-},
-},
-});
+    addBook: (state, action) => {
+      const book = {
+        id: nanoid(),
+        text: action.payload,
+      };
+      state.books.push(book);
+    },
+    removeBook: (state, action) => {
+     state.books = state.books.filter((book) =>
+     book.id !==action.payload)
+    }
+  }
+})
 
-
-export default bookReducer;
+export const { addBook, removeBook } = bookSlice.actions;
+export default bookSlice.reducer;
