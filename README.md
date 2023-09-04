@@ -91,8 +91,10 @@ Must-Install-Project-with-the-Following-Programmes:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- Add functionality
-- Add style
+- use Redux in React components.
+- connect to API
+- styling
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
