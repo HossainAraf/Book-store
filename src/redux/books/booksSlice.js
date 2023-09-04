@@ -1,3 +1,5 @@
+import { createReducer } from '@reduxjs/toolkit';
+
 // DEFINING CONSTANTS
 const AddBook = 'AddBook';
 const RemoveBook = 'RemoveBook';
@@ -23,7 +25,7 @@ const removeBookAction = (title) => ({
 });
 
 // REDUCER
-const addBookReducer = (state = initialBooksState, action) => {
+const bookReducer = (state = initialBooksState, action) => {
   switch (action.type) {
     case AddBook:
       return {
