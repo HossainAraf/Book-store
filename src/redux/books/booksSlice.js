@@ -9,7 +9,7 @@ const initialBooksState = {
   books: [],
 };
 
-//CREATE A SLICE USING createSlice
+// CREATE A SLICE USING createSlice
 const bookSlice = createSlice({
   name: 'book',
   initialState: initialBooksState,
@@ -22,11 +22,10 @@ const bookSlice = createSlice({
       state.books.push(book);
     },
     removeBook: (state, action) => {
-     state.books = state.books.filter((book) =>
-     book.id !==action.payload)
-    }
-  }
-})
+      state.books = state.books.filter((book) => book.id !== action.payload);
+    },
+  },
+});
 
 export const { addBook, removeBook } = bookSlice.actions;
 export default bookSlice.reducer;
