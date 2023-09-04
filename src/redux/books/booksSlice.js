@@ -1,8 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { nanoid } from '@reduxjs/toolkit';
-// DEFINING CONSTANTS
-const AddBook = 'AddBook';
-const RemoveBook = 'RemoveBook';
+import { createSlice, nanoid } from '@reduxjs/toolkit';
 
 // STATE
 const initialBooksState = {
