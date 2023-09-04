@@ -25,21 +25,14 @@ const removeBookAction = (title) => ({
 });
 
 // REDUCER
-const bookReducer = (state = initialBooksState, action) => {
-  switch (action.type) {
-    case AddBook:
-      return {
-        ...state,
-        books: [...state.books, action.payload.title],
-      };
+const bookReducer = createReducer(initialBooksState, {
+  [AddBook]: (state, action) => {
+    state.books.push(action.payload.title);
+  },
 
-    case RemoveBook:
-      return { 
-        ...state,
-        books: state.books.filter((book) => book !== action.payload.title),
-      };
+  [RemoveBook]: (state, action) => {
+    state.books = state.books.filter((book) => book !== action.payload.title);
+  },
+});
 
-    default:
-      return state;
-  }
-};
+export default bookReducer;
