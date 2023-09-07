@@ -3,8 +3,32 @@ import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { addBook } from '../redux/books/booksSlice';
 
+const AddBook = () => {
+  const dispatch = useDispatch();
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
 
-const AddBook = () => (
+  const changeTitle = (event) => {
+    setTitle(event.target.value);
+  };
+
+  const changeAuthor = (event) => {
+    setAuthor(event.target.value);
+  };
+
+  const submitForm = (event) => {
+    event.preventDefault();
+    const id = nanoid;
+
+    dispatch(addBook({
+      item_id: id, title, author, category: '',
+    }));
+
+    setTitle('');
+    setAuthor('');
+  };
+
+  return (
   <form>
     <h4>Add New Book</h4>
     <input
@@ -23,6 +47,7 @@ const AddBook = () => (
       ADD BOOK
     </button>
   </form>
-);
+  );
+};
 
 export default AddBook;
