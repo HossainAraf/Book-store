@@ -5,6 +5,12 @@ import Book from './Book';
 import AddBook from './AddBook';
 
 const BooksList = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
   const books = useSelector((state) => state.books);
   return (
     <div>
