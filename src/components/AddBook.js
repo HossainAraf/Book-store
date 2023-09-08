@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { addBook } from '../redux/books/booksSlice';
+import { AddBookButton } from './Button';
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const AddBook = () => {
 
   const submitForm = (event) => {
     event.preventDefault();
-    const id = nanoid;
+    const id = nanoid();
 
     dispatch(addBook({
       item_id: id, title, author, category: '',
@@ -47,9 +48,9 @@ const AddBook = () => {
         value={author}
         onChange={changeAuthor}
       />
-      <button type="submit" className="add-submit">
+      <AddBookButton type="submit">
         ADD BOOK
-      </button>
+      </AddBookButton>
     </form>
   );
 };
