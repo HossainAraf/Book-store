@@ -1,40 +1,13 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-// STATE
-const initialBooksState = [
-  {
-    item_id: 'item1',
-    title: 'The Great Gatsby',
-    author: 'John Smith',
-    category: 'Fiction',
-  },
-  {
-    item_id: 'item2',
-    title: 'Anna Karenina',
-    author: 'Leo Tolstoy',
-    category: 'Fiction',
-  },
-  {
-    item_id: 'item3',
-    title: 'The Selfish Gene',
-    author: 'Richard Dawkins',
-    category: 'Nonfiction',
-  },
-];
+const APIurl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/SQNY5l4rmszadPvg3zaz/books'; // 6QJZ6Z2X2X
 
-// CREATE A SLICE USING createSlice
-const bookSlice = createSlice({
-  name: 'books',
-  initialState: initialBooksState,
-  reducers: {
-    addBook: (state, action) => {
-      state.push(action.payload);
-    },
-    removeBook: (state, action) => (
-      state.filter((book) => book.item_id !== action.payload)
-    ),
+// CREATE ASYNC THUNK
+export const fetchBooks = createAsyncThunk(
+  'books/fetchBooks',
+  async () => {
+    const response = await axios.get(APIurl);
+    return response.data;
   },
-});
-
-export const { addBook, removeBook } = bookSlice.actions;
-export default bookSlice.reducer;
+);
