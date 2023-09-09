@@ -1,5 +1,4 @@
 import './App.css';
-import './styles/nav.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import BookList from './components/BookList';
