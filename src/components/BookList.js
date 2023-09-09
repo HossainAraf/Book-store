@@ -26,7 +26,7 @@ const BooksPage = () => {
           />
         ))}
       </ul>
-      <div className="hr" />
+      <div className="book-form" />
       <AddBook />
     </div>
   );
