@@ -26,7 +26,7 @@ const BooksPage = () => {
           />
         ))}
       </ul>
-      <div className="book-form" />
+      {/* <div className="book-form" /> */}
       <AddBook />
     </div>
   );

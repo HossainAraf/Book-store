@@ -4,16 +4,13 @@
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 auto;
-  width: 95%;
   background-color: #fff;
 }
 
 .books-container .books {
   display: flex;
   flex-direction: column;
-  align-items: center;
   height: 25.625rem;
-  margin: 1.25rem 0 0 0;
-  padding: 1.25rem 0 0 0;
   background-color: var(--white-two);
+  margin-right: 4%;
 }
