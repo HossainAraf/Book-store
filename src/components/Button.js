@@ -14,7 +14,6 @@ export const RemoveBookButton = ({ onClick, children }) => (
 );
 
 AddBookButton.propTypes = {
-  // onClick: PropTypes.func.isRequired,
   children: PropTypes.string.isRequired,
 };
 
