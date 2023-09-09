@@ -1,10 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// API URL
-const API_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/SQNY5l4rmszadPvg3zaz/books';
+const API_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GIRQBhlsKPXQAMouEvWh/books';
 
-// ASYNC ACTIONS
 const fetchBooks = createAsyncThunk('DisplayBooks', async () => {
   const response = await axios.get(API_URL);
   return response.data;
@@ -17,17 +15,15 @@ const addBook = createAsyncThunk('AddBook', async (book) => {
 
 const removeBook = createAsyncThunk('RemoveBook', async (ITEM_ID) => {
   const response = await axios.delete(`${API_URL}/${ITEM_ID}`);
-  return response.data === 'The book is removed!' ? ITEM_ID : null;
+  return response.data === 'The book was deleted successfully!' ? ITEM_ID : null;
 });
 
-// INITIAL STATE
 const initialState = {
   books: [],
   error: '',
-  status: 'idle',
+  loading: 'idle',
 };
 
-// SLICE
 export const booksSlice = createSlice({
   name: 'books',
   initialState,
@@ -42,8 +38,8 @@ export const booksSlice = createSlice({
         if (action.payload !== '') {
           const books = [];
           const keys = Object.keys(action.payload);
-          keys.forEach((Id) => {
-            books.push({ item_id: Id, ...action.payload[Id][0] });
+          keys.forEach((bookId) => {
+            books.push({ item_id: bookId, ...action.payload[bookId][0] });
           });
           state.books = books;
           if (state.books.length === 0) {
@@ -60,7 +56,7 @@ export const booksSlice = createSlice({
 
     builder
       .addCase(addBook.pending, (state) => {
-        state.status = 'pending';
+        state.status = 'loading';
       })
       .addCase(addBook.fulfilled, (state, action) => {
         if (action.payload !== null) {
