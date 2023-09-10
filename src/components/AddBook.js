@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { addBook } from '../redux/books/booksSlice';
 import { AddBookButton } from './Button';
 import '../styles/addBook.css';
@@ -42,14 +44,17 @@ const AddBook = () => {
           value={title}
           onChange={changeTitle} // onChange is a prop that takes a function
         />
-        <input
-          type="text"
-          placeholder="Add Author"
-          name="author"
-          className="add-author"
-          value={author}
-          onChange={changeAuthor}
-        />
+        <div className="input-author-wrapper">
+          <input
+            type="text"
+            placeholder="Add Author"
+            name="author"
+            className="add-author"
+            value={author}
+            onChange={changeAuthor}
+          />
+          {/* <FontAwesomeIcon icon={faCaretDown} /> */}
+        </div>
         <AddBookButton type="submit">
           ADD BOOK
         </AddBookButton>

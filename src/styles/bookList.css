@@ -10,3 +10,8 @@
   flex-direction: column;
   background-color: var(--white-two);
 }
+
+.books-container .hr {
+  border-color: #f1f1f1 !important;
+  overflow: hidden;
+}
