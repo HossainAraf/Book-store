@@ -1,8 +1,8 @@
 .book {
   display: flex;
   justify-content: space-between;
-  margin: 1%;
-  padding: 0 2%;
+  /* margin: 1%; */
+  /* padding: 0 2%; */
   border-radius: 4px;
   box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
   background-color: #fff;
@@ -71,10 +71,6 @@
   font-family: RobotoSlab Arial, sans-serif;
   font-size: 0.875rem;
   font-weight: 300;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
-  letter-spacing: normal;
   color: #4386bf;
 }
 
@@ -94,7 +90,8 @@
 .progress {
   display: flex;
   align-items: center;
-  flex-basis: 33%;
+
+  /* flex-basis: 33%; */
 }
 
 .progress img {
@@ -129,12 +126,7 @@
   height: 1.125rem;
   margin: 0.438rem 4.938rem 0.75rem 0.75rem;
   opacity: 0.5;
-  font-family: Montserrat Arial, sans-serif;
   font-size: 0.875rem;
-  font-weight: normal;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: normal;
   letter-spacing: normal;
   color: var(--black-two);
 }
@@ -144,8 +136,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  flex-basis: 33%;
-  padding-top: 1%;
+
+  /* flex-basis: 33%; */
+  /* padding-top: 1%; */
 }
 
 .current {
@@ -208,5 +201,6 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  flex-basis: 33%;
+
+  /* flex-basis: 33%; */
 }

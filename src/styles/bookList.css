@@ -1,15 +1,14 @@
 .books-container {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 .books-container .books {
   display: flex;
   flex-direction: column;
-  height: 25.625rem;
   background-color: var(--white-two);
-  margin-right: 4%;
+
+  /* margin-right: 4%; */
 }

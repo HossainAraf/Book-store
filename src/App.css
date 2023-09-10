@@ -2,4 +2,10 @@ body {
   margin: 0;
   padding: 0;
   background-color: #fafafa;
+  font-family: Montserrat Arial, sans-serif;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  width: 100%;
 }
