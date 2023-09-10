@@ -52,6 +52,10 @@
   color: #b1c6db;
 }
 
+.author {
+  margin-top: 0;
+}
+
 .comments {
   border-right: 1px solid #e7e6e7;
   padding-right: 5%;

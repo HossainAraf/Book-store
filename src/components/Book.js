@@ -24,11 +24,9 @@ const Book = ({
             Action
           </h6>
           <h3 className="title">
-            Title:
             {title}
           </h3>
           <p className="author">
-            Author:
             {author}
           </p>
         </div>
