@@ -1,0 +1,205 @@
+.book {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1% 0;
+  padding: 1.5% 2%;
+  border-radius: 4px;
+  box-shadow: 0 0 60px 0 rgba(0, 0, 0, 0.05);
+  background-color: #fff;
+}
+
+.category {
+  width: 3.063rem;
+  height: 1.125rem;
+  margin: 0 2.438rem 0 0;
+  opacity: 0.5;
+  font-family: Montserrat Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #8c8b8c;
+}
+
+.title {
+  width: 12.313rem;
+  height: auto;
+  margin: 0.188rem 20.188rem 0 0;
+  font-family: RobotoSlab Arial, sans-serif;
+  font-size: 1.375rem;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.2px;
+  color: var(--black-two);
+}
+
+.remove {
+  margin-right: 5%;
+  border-right: 1px solid #e7e6e7;
+}
+
+.author,
+.comments,
+.edit,
+.remove button {
+  font-family: RobotoSlab Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #b1c6db;
+}
+
+.author {
+  margin-top: 0;
+}
+
+.comments {
+  border-right: 1px solid #e7e6e7;
+  padding-right: 5%;
+  margin-left: 10%;
+}
+
+.remove button {
+  background-color: transparent;
+  border: none;
+  font-family: RobotoSlab Arial, sans-serif;
+  font-size: 0.875rem;
+  font-weight: 300;
+  color: #b1c6db;
+}
+
+.book-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.book-actions {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.progress {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.chapter::before {
+  content: "";
+  width: 3px;
+  height: 60%;
+  background-color: #fafafa;
+  position: absolute;
+  top: 16px;
+  left: -12%;
+}
+
+.progress img {
+  width: 4.25rem;
+  height: 4.25rem;
+  border: solid 5px var(--white-three);
+}
+
+.progress-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.parcent {
+  width: 4.25rem;
+  height: 2.438rem;
+  margin: 0.063rem 5.75rem 0 0.688rem;
+  font-family: Montserrat Arial, sans-serif;
+  font-size: 2rem;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: var(--black-two);
+}
+
+.completed {
+  width: 5rem;
+  height: 1.125rem;
+  margin: 0.438rem 4.938rem 0.75rem 0.75rem;
+  opacity: 0.5;
+  font-size: 0.875rem;
+  letter-spacing: normal;
+  color: #bebebe;
+}
+
+.chapter {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+}
+
+.current {
+  margin: 0.063rem 3.625rem 0 3.688rem;
+  opacity: 0.5;
+  font-family: RobotoSlab Arial, sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #c2c2c2;
+}
+
+.chapter-number {
+  margin: 0.438rem 6.813rem 0.25rem 3.688rem;
+  font-family: RobotoSlab Arial, sans-serif;
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: normal;
+  letter-spacing: -0.4px;
+  color: #595959;
+}
+
+.update-progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 11.5rem;
+  height: 2.063rem;
+  margin: 0.75rem 0 0.563rem 3.688rem;
+  padding: 0.438rem 1.188rem 0.5rem 1.375rem;
+  border-radius: 3px;
+  background-color: #0290ff;
+}
+
+.update-progress p {
+  width: 8.938rem;
+  height: 1.125rem;
+  font-family: RobotoSlab Arial, sans-serif;
+  font-size: 0.813rem;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: #9ac9f0;
+  margin: 1% 0;
+}
+
+.book-cover {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+}
