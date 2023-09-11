@@ -1,8 +1,10 @@
+// Button component
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
-export const AddBookButton = ({ onClick, children }) => (
-  <button type="submit" onClick={onClick}>
+export const AddBookButton = ({ children }) => (
+  <button type="submit">
     {children}
   </button>
 );
@@ -14,7 +16,6 @@ export const RemoveBookButton = ({ onClick, children }) => (
 );
 
 AddBookButton.propTypes = {
-  onClick: PropTypes.func.isRequired,
   children: PropTypes.string.isRequired,
 };
 

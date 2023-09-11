@@ -1,0 +1,17 @@
+.books-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 2% 9%;
+}
+
+.books-container .books {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white-two);
+}
+
+.books-container .hr {
+  border-color: #f1f1f1 !important;
+  overflow: hidden;
+}
