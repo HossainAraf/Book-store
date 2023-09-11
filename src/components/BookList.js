@@ -1,3 +1,6 @@
+// This component is the main page of the app,
+// it renders the list of books and the form to add a new book
+
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchBooks } from '../redux/books/booksSlice';

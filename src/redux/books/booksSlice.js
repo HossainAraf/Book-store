@@ -1,8 +1,11 @@
+// IMPORT STATEMENTS
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
+// API URL:
 const API_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GIRQBhlsKPXQAMouEvWh/books';
 
+// ASYNC THUNKS
 const fetchBooks = createAsyncThunk('DisplayBooks', async () => {
   const response = await axios.get(API_URL);
   return response.data;
@@ -18,12 +21,14 @@ const removeBook = createAsyncThunk('RemoveBook', async (ITEM_ID) => {
   return response.data === 'The book was deleted successfully!' ? ITEM_ID : null;
 });
 
+// INITIAL STATE
 const initialState = {
   books: [],
   error: '',
   loading: 'idle',
 };
 
+// REDUX SLICE
 export const booksSlice = createSlice({
   name: 'books',
   initialState,
@@ -95,5 +100,6 @@ export const booksSlice = createSlice({
   },
 });
 
+// EXPORTS: ACTIONS & REDUCER
 export { fetchBooks, addBook, removeBook };
 export default booksSlice.reducer;
