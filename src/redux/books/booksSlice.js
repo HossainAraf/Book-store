@@ -3,35 +3,35 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
 // API URL:
-const API_URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GIRQBhlsKPXQAMouEvWh/books';
+const APIurl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/GIRQBhlsKPXQAMouEvWh/books';
 
 // ASYNC THUNKS
-const fetchBooks = createAsyncThunk('DisplayBooks', async () => {
-  const response = await axios.get(API_URL);
+export const fetchBooks = createAsyncThunk('DisplayBooks', async () => {
+  const response = await axios.get(APIurl);
   return response.data;
 });
 
-const addBook = createAsyncThunk('AddBook', async (book) => {
-  const response = await axios.post(API_URL, book);
+export const addBook = createAsyncThunk('AddBook', async (book) => {
+  const response = await axios.post(APIurl, book);
   return response.data === 'Created' ? book : null;
 });
 
-const removeBook = createAsyncThunk('RemoveBook', async (ITEM_ID) => {
-  const response = await axios.delete(`${API_URL}/${ITEM_ID}`);
+export const removeBook = createAsyncThunk('RemoveBook', async (ITEM_ID) => {
+  const response = await axios.delete(`${APIurl}/${ITEM_ID}`);
   return response.data === 'The book was deleted successfully!' ? ITEM_ID : null;
 });
 
 // INITIAL STATE
-const initialState = {
+const initialBookState = {
   books: [],
   error: '',
-  loading: 'idle',
+  status: 'idle',
 };
 
 // REDUX SLICE
 export const booksSlice = createSlice({
   name: 'books',
-  initialState,
+  initialState: initialBookState,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -87,7 +87,7 @@ export const booksSlice = createSlice({
           state.status = 'succeeded';
           state.error = '';
           state.books = state.books.filter((bookId) => bookId.item_id !== action.payload);
-          if (state.books.length === 0) state.error = 'No book was found!';
+          if (state.books.length === 0) state.error = 'No book has found!';
         } else {
           state.status = 'failed';
           state.error = 'Unable to remove book';
@@ -100,6 +100,5 @@ export const booksSlice = createSlice({
   },
 });
 
-// EXPORTS: ACTIONS & REDUCER
-export { fetchBooks, addBook, removeBook };
+// EXPORT REDUCER
 export default booksSlice.reducer;
